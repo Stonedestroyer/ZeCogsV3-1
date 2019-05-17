@@ -138,7 +138,7 @@ class Birthdays(Cog):
                                       lambda i: i.month):
             # Basically separates days with "\n" and people on the same day with ", "
             value = "\n".join(date.strftime("%d").lstrip("0") + ": "
-                              + ", ".join("<@!{}>".format(u_id)
+                              + ", ".join("<@{}>".format(u_id)
                                           + ("" if year is None else " ({})".format(this_year - int(year)))
                                           for u_id, year in bdays.get(str(date.toordinal()), {}).items())
                               for date in g if len(bdays.get(str(date.toordinal()))) > 0)
